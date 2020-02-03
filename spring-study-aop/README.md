@@ -1,5 +1,6 @@
 # spring-study-aop  
-该项目主要是学习springAOP以及自定义注解
+
+该项目主要是学习springAOP以及自定义注解  
 
 经过实践
 - 如果没有加入AOP,spring仅仅通过反射生成对象并放到context中(IOC),getBean的时候,类型为接口或实现类均可。

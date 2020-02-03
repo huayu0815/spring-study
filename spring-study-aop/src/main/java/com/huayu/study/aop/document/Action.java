@@ -7,7 +7,8 @@ import java.lang.annotation.*;
  */
 @Target(ElementType.METHOD) //该注解用于方法上
 @Retention(RetentionPolicy.RUNTIME) //运行时使用
+@Inherited //可继承
 @Documented
 public @interface Action {
-    String name() ;
+    String name() default "";
 }
