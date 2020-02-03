@@ -7,5 +7,5 @@
 - 如果任意方法作为切点,则会利用动态代理生成类的代理类注意
     - 如果委托类没有实现接口,则利用cglib生成委托类的子类作为代理类,Method.getAnnotation可以获取方法上对应的annotation对象。
     - 如果实现了接口,则默认使用jdkProxy生成实现接口的代理类,getBean的时候,获取的对象为接口类型,不再是实现类型(强转为UserServiceImpl会报错)
-    - 如果注解加到接口方法上,Method.getAnnotation可以获取方法上对应的annotation对象
-    - 如果仅仅加到实现类的方法上,Method.getAnnotation无法获取annotation对象
+        - 如果注解加到接口方法上,Method.getAnnotation可以获取方法上对应的annotation对象
+        - 如果仅仅加到实现类的方法上,Method.getAnnotation无法获取annotation对象
