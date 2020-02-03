@@ -5,6 +5,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -16,6 +18,8 @@ import java.lang.reflect.Method;
 @Component //spring管理的bean
 public class LogAspect {
 
+    private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
+
     @Pointcut("@annotation(com.huayu.study.aop.document.Action)") //声明一个切点
     public void annotationPointCut(){}
 
@@ -25,15 +29,27 @@ public class LogAspect {
         MethodSignature signature = (MethodSignature)proceedingJoinPoint.getSignature();
         Method method = signature.getMethod();
         Action action = method.getAnnotation(Action.class) ;
-        System.out.println("注解式拦截:" + method.getName() + ";action Value:" + action.name());
-        return proceedingJoinPoint.proceed(args);
+        logger.info("注解式拦截:" + method.getName() + ",action Value:" + action.name());
+
+        Object returnObj = null;
+        long beginTime = System.currentTimeMillis();
+        try{
+            returnObj = proceedingJoinPoint.proceed(args);
+        } catch (Throwable e) {
+            logger.error("timeAround error:", e);
+        }
+        long endTime = System.currentTimeMillis();
+
+        logger.info("TimeAround,class:{},DeclaringTypeName:{},Time:{}", proceedingJoinPoint.getTarget().getClass(), signature.getDeclaringTypeName(),endTime - beginTime);
+        return returnObj;
+
     }
 
     @Before("execution(* com.huayu.study.aop.core.DemoDao.*(..))")
     public void before(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
         Method method = signature.getMethod();
-        System.out.println("方法规则式拦截:" + method.getName());
+        logger.info("方法规则式拦截:" + method.getName());
     }
 
 

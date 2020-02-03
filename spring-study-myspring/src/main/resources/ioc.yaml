@@ -1,0 +1,5 @@
+bean: 'demoService'
+class: 'com.huayu.study.myspring.biz.DemoService'
+keys:
+ name: 'testName'
+ age: 10
