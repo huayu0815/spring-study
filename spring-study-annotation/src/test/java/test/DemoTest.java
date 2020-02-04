@@ -1,7 +1,5 @@
 package test;
 
-import cn.hutool.core.io.resource.ClassPathResource;
-import com.google.common.collect.Lists;
 import com.huayu.study.annotation.biz.DemoService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
