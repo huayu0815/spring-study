@@ -11,6 +11,7 @@
     <modules>
         <module>spring-study-aop</module>
         <module>spring-study-myspring</module>
+        <module>spring-study-java</module>
     </modules>
 
     <parent>
