@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 public class Demo {
-    private String name;
-    private int age;
+    private String name = "java";
+    private int age = 1;
 
     @Override
     public String toString() {
