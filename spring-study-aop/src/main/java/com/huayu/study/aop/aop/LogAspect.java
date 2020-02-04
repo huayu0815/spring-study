@@ -45,11 +45,21 @@ public class LogAspect {
 
     }
 
+    //方式一
     @Before("execution(* com.huayu.study.aop.core.DemoDao.*(..))")
     public void before(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
         Method method = signature.getMethod();
-        logger.info("方法规则式拦截:" + method.getName());
+        logger.info("方法规则式拦截before:" + method.getName());
+    }
+
+    //方式二
+    public final String POINT = "execution(* com.huayu.study.aop.core.DemoDao.*(..))";
+    @After(POINT)
+    public void after(JoinPoint joinPoint) {
+        MethodSignature signature = (MethodSignature)joinPoint.getSignature();
+        Method method = signature.getMethod();
+        logger.info("方法规则式拦截after:" + method.getName());
     }
 
 

@@ -12,6 +12,7 @@
         <module>spring-study-aop</module>
         <module>spring-study-myspring</module>
         <module>spring-study-java</module>
+        <module>spring-study-annotation</module>
     </modules>
 
     <parent>
