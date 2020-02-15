@@ -13,6 +13,7 @@
         <module>spring-study-myspring</module>
         <module>spring-study-java</module>
         <module>spring-study-annotation</module>
+        <module>spring-study-drools</module>
     </modules>
 
     <parent>
