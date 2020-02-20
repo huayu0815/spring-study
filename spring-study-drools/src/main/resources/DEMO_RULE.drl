@@ -1,0 +1,25 @@
+import java.math.BigDecimal;
+import com.huayu.study.drools.model.Person
+
+global java.util.Set set1 ;
+global java.util.Set set2 ;
+
+rule "1"
+salience 100
+    when
+        $person: Person(isDiagnosed == true);
+    then
+        set1.add($person);
+end
+
+
+rule "2"
+salience 99
+    when
+        $person: Person(isDiagnosed == true);
+        $person2: Person(isDiagnosed == false, contact contains $person.uid);
+
+    then
+        set2.add($person2);
+end
+

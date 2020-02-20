@@ -29,8 +29,8 @@ public class JavaAssistDemo {
         System.out.println(demo.toString());*/
 
         ClassPool pool = ClassPool.getDefault();
-        CtClass cc = pool.get("com.huayu.study.java.javaassist.model.Demo");
-        cc.setSuperclass(pool.get("com.huayu.study.java.javaassist.model.SuperDemo"));
+        CtClass cc = pool.get("com.huayu.study.java.javaassist.com.huayu.study.drools.model.Demo");
+        cc.setSuperclass(pool.get("com.huayu.study.java.javaassist.com.huayu.study.drools.model.SuperDemo"));
         cc.toClass();
         //new对象，先从jvm中找，修改后的已经加载到jvm中，则直接使用，不再从源文件中查找和加载
         Demo demoNew = new Demo();
@@ -45,7 +45,7 @@ public class JavaAssistDemo {
     public void createDemo1() throws Exception {
         //创建类
         ClassPool classPool = ClassPool.getDefault();
-        CtClass ctClass = classPool.makeClass("com.huayu.study.java.javaassist.model.Demo1");
+        CtClass ctClass = classPool.makeClass("com.huayu.study.java.javaassist.com.huayu.study.drools.model.Demo1");
         //添加name属性及getter,setter
         CtField param = new CtField(classPool.get("java.lang.String"), "name", ctClass) ;
         param.setModifiers(Modifier.PRIVATE);

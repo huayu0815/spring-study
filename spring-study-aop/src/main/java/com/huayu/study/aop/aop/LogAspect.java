@@ -73,22 +73,22 @@ public class LogAspect {
      *
      * XML方式的配置
      *  <bean id="audience" class="com.XinXiangShop.AOP.Audience"/>
-     <aop:config>
+     <aop:com.huayu.study.drools.config>
      <aop:aspect ref="audience">
      <aop:before method="takeSeat" pointcut="execution(* *.perform(..))"/>
      <aop:before method="turnOffPhone" pointcut="execution(* *.perform(..))"/>
      <aop:after-returning method="applaud" pointcut="execution(* *.perform(..))"/>
      <aop:after-throwing method="unHappy" pointcut="execution(* *.perform(..))"/>
      </aop:aspect>
-     </aop:config>
+     </aop:com.huayu.study.drools.config>
      *
      * 利用AOP的事务控制
-     * <aop:config>
+     * <aop:com.huayu.study.drools.config>
      <aop:pointcut id="allServiceMethods"
      expression="execution(* com.apress.prospring2.ch16.services.*.*(..))"/>
      <aop:advisor advice-ref="defaultTransactionAdvice"
      pointcut-ref="allServiceMethods"/>
-     </aop:config>
+     </aop:com.huayu.study.drools.config>
 
      <tx:advice id="defaultTransactionAdvice" transaction-manager="transactionManager">
      <tx:attributes>
