@@ -34,7 +34,7 @@ public class DemoClass {
 
         Person person1 = new Person(1L, "小a", true, Lists.newArrayList());
         Person person2 = new Person(2L, "小b", true, Lists.newArrayList());
-        Person person3 = new Person(3L, "小c", false, Lists.newArrayList(person1.getUid(),person2.getUid()));
+        Person person3 = new Person(3L, "小c", false, Lists.newArrayList(person1.getUid()));
         Person person4 = new Person(4L, "小d", false, Lists.newArrayList(person3.getUid()));
 
         Set<Person> set1 = Sets.newHashSet();
