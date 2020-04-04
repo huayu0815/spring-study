@@ -18,6 +18,7 @@
     <modules>
         <module>dubbo-client</module>
         <module>dubbo-api</module>
+        <module>dubbo-xml</module>
     </modules>
 
     <dependencyManagement>
