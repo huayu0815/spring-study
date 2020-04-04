@@ -20,6 +20,7 @@
         <module>dubbo-api</module>
         <module>dubbo-xml</module>
         <module>dubbo-properties</module>
+        <module>dubbo-annotation</module>
     </modules>
 
     <dependencyManagement>

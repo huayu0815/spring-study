@@ -20,5 +20,5 @@
     <dubbo:service interface="com.huayu.study.dubbo.client.DemoService" ref="demoService" />
 
     <!-- 和本地bean一样实现服务 -->
-    <bean id="demoService" class="com.huayu.study.dubbo.provider.DemoServiceImpl" />
+    <bean id="demoService" class="com.huayu.study.dubbo.DemoServiceImpl" />
 </beans>
